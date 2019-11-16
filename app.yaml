@@ -1,0 +1,15 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+  # handle static files, change the path according to your need
+- url: /(.*\.(js|css|png|jpg|ico|ttf|woff|eot|svg))$
+  static_files: \1
+  upload: .*\.(js|css|png|jpg|ico|ttf|woff|eot|svg)$
+  secure: always
+  # catch all handler to index.html
+- url: /.*
+  static_files: index.html
+  upload: index.html
+  secure: always
